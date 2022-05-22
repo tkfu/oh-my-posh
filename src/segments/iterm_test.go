@@ -19,7 +19,7 @@ func TestITermSegment(t *testing.T) {
 	}{
 		{Case: "not iterm", TermProgram: "", SquelchMark: "1", Shell: "zsh", ExpectedDisabled: true},
 		{Case: "default mark", TermProgram: "iTerm.app", Shell: "zsh", Template: "{{ .PromptMark }}", ExpectedDisabled: true},
-		{Case: "zsh", TermProgram: "iTerm.app", SquelchMark: "1", Shell: "zsh", Template: "{{ .PromptMark }}", ExpectedString: `%{$(iterm2_prompt_mark)%}`},
+		{Case: "zsh", TermProgram: "iTerm.app", SquelchMark: "1", Shell: "zsh", Template: "{{ .PromptMark }}", ExpectedString: `$(iterm2_prompt_mark)`},
 		{Case: "bash", TermProgram: "iTerm.app", SquelchMark: "1", Shell: "bash", Template: "{{ .PromptMark }}", ExpectedString: `\[$(iterm2_prompt_mark)\]`},
 		{Case: "fish", TermProgram: "iTerm.app", SquelchMark: "1", Shell: "fish", Template: "{{ .PromptMark }}", ExpectedString: `iterm2_prompt_mark`},
 		{Case: "pwsh", TermProgram: "iTerm.app", SquelchMark: "1", Shell: "pwsh", Template: "{{ .PromptMark }}", ExpectedDisabled: true},

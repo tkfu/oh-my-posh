@@ -42,7 +42,7 @@ func (i *ITerm) getResult() (string, error) {
 	// Now, set the mark string based on shell (or error out)
 	switch i.env.Shell() {
 	case "zsh":
-		response = `%{$(iterm2_prompt_mark)%}`
+		response = `$(iterm2_prompt_mark)`
 	case "bash":
 		response = `\[$(iterm2_prompt_mark)\]`
 	case "fish":
